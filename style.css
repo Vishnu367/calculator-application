@@ -6,15 +6,19 @@
 
 body {
     background: linear-gradient(to right, #00AAFF, #00FF6C);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    margin: auto;
-    width: 500px;
-    height: 100vh;
+    /* margin: auto; */
+    width: 450px;
+    /* height: 500px; */
     display: grid;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 30%);
     justify-content: center;
     align-content: center;
     
@@ -28,15 +32,46 @@ button {
     border: 1px solid white;
 }
 
-button:hover {
+button:active {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
 .display {
     grid-column: 1 /-1;
     background-color: white;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding-right: 10%;
+    gap: 5px;
 }
 
 .col-span-2 {
-    grid-column: span 2;
+    grid-column: span 2;/
+}
+
+.data-preview {
+    
+}
+.lower {
+    font-size: 1.4rem;
+    color: rgb(60, 60, 60);
+}
+.upper {
+    font-size: 2.2rem;
+}
+
+@media screen and (min-width: 319px) and (max-width: 480px) {
+    body {
+        overflow: hidden;
+        /* background: linear-gradient(to bottom, white,rgba(255, 255, 255, .75)); */
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: minmax(120px, auto) repeat(5, 16.5%);
+    }
 }
